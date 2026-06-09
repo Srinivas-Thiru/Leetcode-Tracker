@@ -10,7 +10,7 @@ class Solution:
         if not root: return 0
         queue = deque()
         queue.append(root)
-        ans = 10**6
+        ans = float("inf")
         while queue:
             n = len(queue)
             level += 1
