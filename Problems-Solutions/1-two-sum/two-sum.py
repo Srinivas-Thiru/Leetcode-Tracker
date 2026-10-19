@@ -1,10 +1,12 @@
-from collections import defaultdict
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d = {}
-        for counter, i in enumerate(nums):
-            rem = target - i
-            if rem in d:
-                return [counter, d[rem]]
-            d[i] = counter
-        return []
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        dic = {}
+        for i in range(0, len(nums)):
+            dic[nums[i]] = i
+        
+        for i in range(0, len(nums)):
+            bal = target - nums[i]
+            if bal in dic and dic[bal] != i:
+                return [i, dic[bal]]
+        
+        return [0,0]
